@@ -30,7 +30,7 @@ if ($num == 1) {
     $_SESSION['username'] = $name;
 
     // $new_log="INSERT INTO logs(name) VALUES ($username)";
-    header('location:../views/dashboard.html');
+    header('location:../dashboard.html');
 } else {
     header('location: ../index.html');
 }
