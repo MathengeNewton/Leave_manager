@@ -1,18 +1,6 @@
 
 <?php
-session_start();
-//connect to server
-$servername = "localhost";
-$username = "root";
-$password = "mathenge,./1998";
-
-$con = mysqli_connect($servername, $username, $password);
-
-mysqli_select_db($con, 'leave_management');
-
-if ($con->connect_error) {
-    echo "no connection";
-}
+include 'connection.php';
 
 $name = $_POST['username'];
 $password = $_POST['password'];
@@ -28,8 +16,14 @@ $num = mysqli_num_rows($result);
 if ($num == 1) {
 
     $_SESSION['username'] = $name;
+    // $time = time();
 
-    // $new_log="INSERT INTO logs(name) VALUES ($username)";
+    // $new_log = mysqli_query($con, "insert into sessions('num_id','session_status','start_time') values ($password,'active',$time)");
+    // // $inserted = mysqli_query($conn, $new_log);
+    // if ($new_log) {
+    // echo 'there was an error loging in';
+    // }
+
     header('location:../dashboard.html');
 } else {
     header('location: ../index.html');
