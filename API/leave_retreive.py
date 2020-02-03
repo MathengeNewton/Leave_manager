@@ -13,12 +13,11 @@ conn_init = mysql.connector.connect(
 def my_function(*args, **kwags):
     mycursor = conn_init.cursor()
 
-    n = mycursor.execute("SELECT * FROM leave_details")
+    n = mycursor.execute(
+        "SELECT employee_id FROM leavedetails where name = 'system'")
 
     for x in mycursor:
         print(x)
-
-    print(json.dumps((n)))
 
 
 my_function(conn_init)

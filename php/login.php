@@ -7,7 +7,7 @@ $password = $_POST['password'];
 // echo $name . $password;
 
 
-$s = "SELECT * FROM employees WHERE name = '$name' && num_id = '$password'";
+$s = "SELECT * FROM employees WHERE name = '$name' && password = '$password'";
 
 $result = mysqli_query($con, $s);
 $num = mysqli_num_rows($result);

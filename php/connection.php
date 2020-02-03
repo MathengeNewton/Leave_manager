@@ -4,11 +4,12 @@ session_start();
 $servername = "localhost";
 $username = "root";
 $password = "mathenge,./1998";
+$dbname = "leave_management";
 
-$con = mysqli_connect($servername, $username, $password);
+$con = mysqli_connect($servername, $username, $password, $dbname);
 
-$conn = mysqli_select_db($con, "leave_management");
+
 
 if ($con->connect_error) {
-echo "no connection";
+    echo "no connection";
 }
